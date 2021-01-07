@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: url("../images/login_bg.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #cccccc;
+  background-blend-mode: multiply;
+
+ }
+ background{
+     opacity:0.33;
+ }
+usernames {
+  font-size: 20%;
+  text-decoration-color: greenyellow;
+  color: gold;
+}
+.container{
+  margin-left:700px;
+  margin-right:200px;
+  margin-top:130px;
+  width:400px;
+
+}
+button{
+  margin-left:100px;
+  width:40%;
+  background-color: rgb(19, 19, 141);
+}
+.log{
+  margin-left: 100px;
+  color: rgb(19, 19, 141);
+}
+h1{
+  align-items: center;
+  margin-left: 130px;
+}

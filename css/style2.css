@@ -1,0 +1,65 @@
+#navbar{
+    background-color: rgb(0, 0, 170);
+    }
+    #headnav{
+        background-color:rgba(2, 2, 124, 0.856);
+        margin-bottom: 0px;
+    
+    }
+    .navbar.bg-light {
+      background-color: #02027c !important;
+    }
+    
+    
+    .container{
+        width: auto;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        padding: 0px;
+        display: flex;
+    }
+    i {
+        color: rgb(1, 166, 196);
+    }
+    #container2{
+        margin-left: 0px;
+        margin-right: 0px;
+        display: flex;
+    }
+    .breadcrumb{
+        margin-left: 0px;
+        margin-right: 200px;
+    }
+    #fot{
+        width:635%;
+        text-decoration: white;
+        background-color:rgba(26, 26, 160, 0.856) ;
+        margin-bottom: 15px;
+    }
+    .footext{
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    #navbarDropdown{
+        text-decoration: white;
+    }
+    /* #assign{
+        background-color: rgb(221, 211, 211);
+        margin-inline: 40px;
+        margin-left: 4px;
+        margin-right: 4px;
+        width:200px;
+    } */
+    .mb-3, .my-3{
+        margin-bottom:  2rem!important;
+    }
+    #team{
+        background-color: green;
+    }
+    
+    .assign{
+        margin-bottom: 4px;
+       /* background-color: rgb(161, 202, 248);*/
+        text-align: inline;
+    }
