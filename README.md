@@ -1,0 +1,2 @@
+# Counselling-Management-System
+COUNSELLING MANAGEMENT SYSTEM” is a web application that enables the user to control student counselling process online.In this project we use php because, PHP is a general purpose, server-side scripting language run a web server that's designed to make dynamic pages and applications. PHP as a web development option is secure, fast and a reliable that offers lots more advantages to make it accessible to a lot of people.
