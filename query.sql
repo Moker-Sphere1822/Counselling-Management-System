@@ -1,7 +1,7 @@
   --                                    creating table 1
 
-DROP TABLE IF EXISTS `tbl_lead_distribution`;
-CREATE TABLE `tbl_lead_distribution` (
+DROP TABLE IF EXISTS `cms_student_distribution`;
+CREATE TABLE `cms_student_distribution` (
   `L_ID` int(10) NOT NULL AUTO_INCREMENT,
   `E_ID` int(10) NOT NULL,
   `U_ID` varchar(50) NOT NULL,
@@ -31,8 +31,8 @@ CREATE TABLE `tbl_lead_distribution` (
  
 --                                      creating table 2
 
-DROP TABLE IF EXISTS `tbl_lead_management`;
-CREATE TABLE `tbl_student_management` (
+DROP TABLE IF EXISTS `cms_student_management`;
+CREATE TABLE `cms_student_management` (
   `E_ID` int(5) NOT NULL AUTO_INCREMENT,
   `Student_Name` varchar(50) DEFAULT NULL,
   `Course` varchar(50) NOT NULL,
@@ -51,8 +51,8 @@ CREATE TABLE `tbl_student_management` (
 
 --                                     creating table 3
 
-DROP TABLE IF EXISTS `tbl_student_details`;
-CREATE TABLE `tbl_student_details` (
+DROP TABLE IF EXISTS `cms_student_details`;
+CREATE TABLE `cms_student_details` (
   `S.no.` int(10) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) DEFAULT NULL,
   `inquiry_mode` varchar(50) DEFAULT NULL,
@@ -88,8 +88,8 @@ CREATE TABLE `tbl_student_details` (
 );
                                         -- table 4
 
-DROP TABLE IF EXISTS `tbl_userinfo`;
-CREATE TABLE `tbl_userinfo` (
+DROP TABLE IF EXISTS `cms_userinfo`;
+CREATE TABLE `cms_userinfo` (
   `username` varchar(30) NOT NULL DEFAULT '',
   `Name` varchar(50) DEFAULT NULL,
   `Department` varchar(50) DEFAULT NULL,
@@ -99,19 +99,19 @@ CREATE TABLE `tbl_userinfo` (
   `Campus` varchar(50) NOT NULL,
   `Team_info` varchar(50) NOT NULL,
   `profile_image` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`U_ID`),
-  KEY `U_ID` (`U_ID`),
-  KEY `U_ID_2` (`U_ID`)
+  PRIMARY KEY (`username`),
+  KEY `U_ID` (`username`),
+  KEY `U_ID_2` (`username`)
 );
 
-INSERT INTO `tbl_userinfo` (`U_ID`, `Name`, `Department`, `Role`, `Status`, `Password`, `Campus`, `Team_info`, `profile_image`) VALUES
+INSERT INTO `cms_userinfo` (`U_ID`, `Name`, `Department`, `Role`, `Status`, `Password`, `Campus`, `Team_info`, `profile_image`) VALUES
 ('Rohan@sistec.ac.in',	'Rohan Rajput',	'Computer science',	'admin',	1,	'Rohan123',	'Sistec-gn',	'GN-onlineteam',	'rohan.jpg');
  
 
                                       --table 5
 
-DROP TABLE IF EXISTS `tbl_user_logininfo`;
-CREATE TABLE `tbl_user_logininfo` (
+DROP TABLE IF EXISTS `cms_user_logininfo`;
+CREATE TABLE `cms_user_logininfo` (
   `S.no` int(10) NOT NULL AUTO_INCREMENT,
   `U_ID` varchar(50) DEFAULT NULL,
   `login_date_time` datetime DEFAULT NULL,
@@ -157,6 +157,6 @@ CREATE TABLE `tbl_user_logininfo` (
                                             Team_name) 
                                             values('$first_name','$mode_of_inquiry','".$Aadhar_number."','".$mobile_number."','".$Inquiry_date."','$college_name','$Course_name','$Branch_name','".$jee_marks."','$board_name','".$Visit_date."','$state_name','$Location','$Converted_by','".$Registration_date."','$Scholarship_form','$Hostel_status','$Fees_commitment','".$total_fees."','".$Deposit_amount."','".$Brokrage_amount."','$tc_migration','$tc_migration_account','$Document_verificatio','".$First_installment."','".$Second_installment."','$Admission_Status','$Team_name')";
 
-$query = "DELETE FROM `tbl_userinfo` WHERE U_ID='".$id."
+$query = "DELETE FROM `cms_userinfo` WHERE U_ID='".$id."
          $qry36="update tbl_lead_management set Course='$Course',Branch='$Branch' where E_ID=$en_id";
          $qry20="update tbl_lead_distribution set R1='$remark1',R2='$remark2',R3='$remark3',R4='$remark4',10th='$percen1',12th='$percen2',board='$board1',visit='$status1',Tentative_visit_date='".$date."',status='$final_status',whatsapp_no='$WhatsApp' where E_ID=$en_id";
