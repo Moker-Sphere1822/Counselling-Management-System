@@ -4,7 +4,7 @@
 
    if(isset($_SESSION['username']))
    {
-   $query = "select *from tbl_userinfo where username='$username'";
+   $query = "select *from cms_userinfo where username='$username'";
    $result = mysqli_query($connect, $query);
    if($value1=mysqli_fetch_assoc($result))
               {
@@ -13,7 +13,7 @@
                     $value1['profile_image']='default.png';
                  }
               
-                    $name001=$value1['Name'];
+                    $nameuser=$value1['Name'];
                     $role=$value1['Role'];
               }
 
@@ -53,24 +53,20 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="mr-auto"></div>
-      <ul class="navbar-nav my-2 my-lg-0">
-<!-- <li class="nav-item active">
-        <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-       -->                    
+      <ul class="navbar-nav my-2 my-lg-0">                 
       <li class="dropdown">
       <div class="btn-group dropleft">
   <button type="button" class="btn btn-secondary dropdown-toggle bg-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <i class="fa fa-user-circle"></i><?php //echo $name001; ?>
+  <i class="fa fa-user-circle"></i><?php //echo $nameuser; ?>
   </button>
 
                       <ul id="g-account-menu" class="dropdown-menu pl-15 pr-15 mt-10 " role="menu">
                            <li><a href="myprofile.php" class="headeraa"><i class="fa fa-user-secret"></i> My Profile</a></li>
                            <li><a href="changepassword.php" class="headeraa"><i class="fa fa-lock"></i> Change Password</a></li>
                            <li><a href="editprofile.php" class="headeraa"><i class="fa fa-user-secret"></i> Edit profile </a></li>
-                           <?php// if($role=='admin'){ ?>
+                           <?php if($role=='admin'){ ?>
                            <li><a href="login_logged.php" class="headeraa"><i class="fa  fa-sign-in"></i> Login Users </a></li>
-                           <?php// } ?> 
+                           <?php } ?> 
                            <li><a href="database/logout.php" class="headeraa"><i class="fa fa-sign-out"></i> Logout</a></li>
                       </ul>
 
@@ -87,36 +83,16 @@
      <li class="breadcrumb-item active"  style="width:800px;" aria-current="page"> Dashboard</li>
   </ol>
 </nav>
-                <!-- <li class="dropdown">
-                    <a class="dropdown-toggle headerClass" role="button" data-toggle="dropdown" href="#"><i class="fa fa-user-circle"></i>WELCOME-<?php echo $name001; ?><span style="color: white;" class="caret"></span></a>
-                      <ul id="g-account-menu" class="dropdown-menu pl-15 pr-15 mt-10 " role="menu">
-                           <li><a href="myprofile.php" class="headeraa"><i class="fa fa-user-secret"></i> My Profile</a></li>
-                           <li><a href="changepassword.php" class="headeraa"><i class="fa fa-lock"></i> Change Password</a></li>
-                           <li><a href="editprofile.php" class="headeraa"><i class="fa fa-user-secret"></i> Edit profile </a></li>
-                           <?php if($role=='admin'){ ?>
-                           <li><a href="login_logged.php" class="headeraa"><i class="fa  fa-sign-in"></i> Login Users </a></li>
-                           <?php } ?> 
-                           <li><a href="database/logout.php" class="headeraa"><i class="fa fa-sign-out"></i> Logout</a></li>
-                      </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-  </div> -->
-    <!-- /container -->
-
-<!-- /Header -->
-<!-- Main -->
-
+    
                   <?php
                     if($role=='admin')
                      {
                     ?>
-                           <div class="col-md-3">
+             <div class="col-md-3">
             <div class="list-group">
               <!-- <a href="index.php?page=dashboard"    class="list-group-item list-group-item-action active"><i class="fas fa-tachometer-alt"></i> Dashboard</a> -->
               <a href="dashboard.php"  class="list-group-item list-group-item-action"><i class="fa fa-user-plus"></i> Dashboard</a>
-              <a href="team_members.php"  class="list-group-item list-group-item-action"><i class="fa fa-users"></i> Team members</a>
+              <a href="team_member.php"  class="list-group-item list-group-item-action"><i class="fa fa-users"></i> Team members</a>
               <a href="team_performance.php"    class="list-group-item list-group-item-action"><i class="fa fa-users"></i> Team performance</a>
               <a href="remark-view.php" class="list-group-item list-group-item-action"><i class="fa fa-user"></i> View Remark</a>
               <a href="total_students.php" class="list-group-item list-group-item-action"><i class="fa fa-user"></i> Total Students</a>
@@ -124,12 +100,12 @@
               <a href="mannually_upload.php" class="list-group-item list-group-item-action"><i class="fa fa-user"></i> Add Student</a>
               <a href="distributed_students.php" class="list-group-item list-group-item-action"><i class="fa fa-user style="color" ></i> Distribute student</a>
               <a href="assigned_students.php" class="list-group-item list-group-item-action"><i class="fa fa-user"></i> Assign student</a>
-              <a href="report_admission.php" class="list-group-item list-group-item-action"><i class="fa fa-user"></i> Report</a>
+              <a href="report.php" class="list-group-item list-group-item-action"><i class="fa fa-user"></i> Report</a>
              <a href="profile_edit.php" class="list-group-item list-group-item-action"><i class="fa fa-user"></i> User Profile</a> 
             </div></div>
                     <?php
                      }
-                     elseif($role=='Subadmin-gn')
+                     elseif($role=='sub-admin')
                      {
                     ?>     
                             <a href="dashboard.php"  class="list-group-item list-group-item-action"><i class="fa fa-user-plus"></i> Dashboard</a>
@@ -158,8 +134,8 @@
                            
                  </li>
             </ul>
-        </div> 
-</>
+        
+
 
 <?php
   }
@@ -168,4 +144,3 @@
        header('Location: index.php');
    }
 ?>
-<?php?>

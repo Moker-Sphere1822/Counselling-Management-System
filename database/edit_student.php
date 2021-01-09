@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "conn.php";
 //var_dump($_POST);exit();
 if(isset($_POST['update_button']))
 {
@@ -21,7 +21,7 @@ if(isset($_POST['update_button']))
    {
          $Course=$_POST['Course'];
          $Branch=$_POST['Branch'];
-         $qry36="update tbl_lead_management set Course='$Course',Branch='$Branch' where E_ID=$en_id";
+         $qry36="update cms_student_management set Course='$Course',Branch='$Branch' where E_ID=$en_id";
          $upd=mysqli_query($connect,$qry36); 
 
    }      
@@ -32,12 +32,12 @@ if(isset($_POST['update_button']))
 
     if($role=='admin')
      {
-         $qry20="update tbl_lead_distribution set R1='$remark1',R2='$remark2',R3='$remark3',R4='$remark4',10th='$percen1',12th='$percen2',board='$board1',visit='$status1',Tentative_visit_date='".$date."',status='$final_status',whatsapp_no='$WhatsApp' where E_ID=$en_id";
+         $qry20="update cms_student_distribution set R1='$remark1',R2='$remark2',R3='$remark3',R4='$remark4',10th='$percen1',12th='$percen2',board='$board1',visit='$status1',Tentative_visit_date='".$date."',status='$final_status',whatsapp_no='$WhatsApp' where E_ID=$en_id";
 
      }
      else
      { 
-      echo $qry20="update tbl_lead_distribution set R1='$remark1',R2='$remark2',R3='$remark3',R4='$remark4',10th='$percen1',12th='$percen2',board='$board1',visit='$status1',Tentative_visit_date='".$date."',status='$final_status',whatsapp_no='$WhatsApp' where U_ID='$username' and E_ID=$en_id";
+      echo $qry20="update cms_student_distribution set R1='$remark1',R2='$remark2',R3='$remark3',R4='$remark4',10th='$percen1',12th='$percen2',board='$board1',visit='$status1',Tentative_visit_date='".$date."',status='$final_status',whatsapp_no='$WhatsApp' where username='$username' and E_ID=$en_id";
      }  
       $update_query=mysqli_query($connect,$qry20); 
     

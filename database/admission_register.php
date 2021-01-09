@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include "conn.php";
 
 if (isset($_POST['Register_all_data']))
 {
@@ -32,7 +32,7 @@ if (isset($_POST['Register_all_data']))
   $Second_installment=$_POST['Second_installment'];
   $Admission_Status=$_POST['Admission_Status'];
 
-echo $qry31="insert into tbl_student_details(
+echo $qry31="insert into cms_student_details(
                                             Name,
                                             inquiry_mode,
                                             Aadhar_number,

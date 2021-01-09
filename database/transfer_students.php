@@ -1,5 +1,5 @@
 <?php
- include "config.php";
+ include "conn.php";
 
 if (isset($_POST['update_button']))
 {
@@ -14,7 +14,7 @@ if (isset($_POST['update_button']))
 			  $user=$_POST['userName'];
 
 
-             $qry26="UPDATE `tbl_lead_distribution` SET `E_ID`=$key,`U_ID`='$user',`R1`='remark1',`Lead_allotment_Date`=sysdate(),`Reason_of_transfer`='$reason',`flag`=1,`Transfer_by`='$userName' WHERE `E_ID`=$key";
+             $qry26="UPDATE `cms_student_distribution` SET `E_ID`=$key,`username`='$user',`R1`='remark1',`Lead_allotment_Date`=sysdate(),`Reason_of_transfer`='$reason',`flag`=1,`Transfer_by`='$userName' WHERE `E_ID`=$key";
              mysqli_query($connect,$qry26);
              header("location:../distribute_inquires.php");
 

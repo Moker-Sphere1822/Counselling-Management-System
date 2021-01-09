@@ -138,4 +138,4 @@
 <div class="col-md-1 col-sm-1 col-xs-12">
 </div>
 
-<?php include "footer.php"; ?>
+<?php include ('footer.php'); ?>

@@ -103,6 +103,14 @@ CREATE TABLE `cms_userinfo` (
   KEY `U_ID` (`username`),
   KEY `U_ID_2` (`username`)
 );
+--                    query to check whether the username is present in user table 
+$qry1="select Status from tbl_userinfo where username='$user'";
+
+                        --  // to check uername and password are correct 
+$qry2="select *from tbl_userinfo where username='$user' and Password='$pass'";
+
+-- //                       to track login logout time of all uers
+$login_time="insert into tbl_user_logininfo(U_ID,login_date_time) values('$login_user',sysdate())";
 
 INSERT INTO `cms_userinfo` (`U_ID`, `Name`, `Department`, `Role`, `Status`, `Password`, `Campus`, `Team_info`, `profile_image`) VALUES
 ('Rohan@sistec.ac.in',	'Rohan Rajput',	'Computer science',	'admin',	1,	'Rohan123',	'Sistec-gn',	'GN-onlineteam',	'rohan.jpg');
@@ -115,7 +123,7 @@ CREATE TABLE `cms_user_logininfo` (
   `S.no` int(10) NOT NULL AUTO_INCREMENT,
   `U_ID` varchar(50) DEFAULT NULL,
   `login_date_time` datetime DEFAULT NULL,
-  `logged_date_time` datetime DEFAULT NULL,
+  `logged_date_time` datetime DEFAULT NULL, 
   PRIMARY KEY (`S.no`)
 );
 

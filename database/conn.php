@@ -1,6 +1,6 @@
  <!-- <?php
 // $connect = mysqli_connect('localhost', 'root', '');
-// $cd = mysqli_select_db($connect,'lead_management');
+// $cd = mysqli_select_db($connect,'cms');
 
 // if($connect==true)
 // {
@@ -26,7 +26,7 @@ session_start();
 $server="localhost";
 $username="root";
 $password="";
-$database="lead_management";
+$database="cms";
 
 $connect = mysqli_connect($server,$username,$password,$database);
 

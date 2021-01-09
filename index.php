@@ -10,13 +10,14 @@
              {
 				          $user=$_POST['username'];
 				          $pass=$_POST['password'];
-
-                  $qry1="select Status from tbl_userinfo where username='$user'";
+               // query to check whether the username is present in user table 
+                  $qry1="select Status from cms_userinfo where username='$user'";
                   $qry2=mysqli_query($connect,$qry1);
                   $row=mysqli_fetch_assoc($qry2);             
                   if($row['Status']==1)
                   {
-                  	  $qry3="select *from tbl_userinfo where username='$user' and Password='$pass'";
+                    // to check uername and password are correct 
+                  	  $qry3="select *from cms_userinfo where username='$user' and Password='$pass'";
                   	  $qry4=mysqli_query($connect,$qry3);
                   	  $row1=mysqli_num_rows($qry4);
                       if($row1>0)
@@ -27,7 +28,8 @@
                   	  	 {
                   	       $_SESSION['username'] = $row3['username'];
                            $login_user=$row3['U_ID'];
-                           $login_time="insert into tbl_user_logininfo(U_ID,login_date_time) values('$login_user',sysdate())";
+                           // to track login logout time of all uers
+                           $login_time="insert into cms_user_logininfo(U_ID,login_date_time) values('$login_user',sysdate())";
                            $login_qry=mysqli_query($connect,$login_time);
                   	       header('location:dashboard.php');
                   	     }  

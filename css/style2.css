@@ -12,12 +12,13 @@
     
     
     .container{
-        width: auto;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 0px;
-        padding: 0px;
+        width: 100px;
+       
         display: flex;
+        margin-left:900px;
+        margin-right:200px;
+       
+        
     }
     i {
         color: rgb(1, 166, 196);
